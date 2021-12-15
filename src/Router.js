@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer'; // eslint-disable-line no-unused-vars
 
 // 안신's 컴포넌트
 import LoginAnsin from './pages/ansin/Login/Login';
@@ -10,8 +11,8 @@ import LoginSunjoo from './pages/sunjoo/Login/Login';
 import MainSunjoo from './pages/sunjoo/Main/Main';
 
 // 채현's 컴포넌트
-import LoginCheayeon from './pages/cheayeon/Login/Login';
-import MainCheayeon from './pages/cheayeon/Main/Main';
+import LoginCheayeon from './pages/chaehyun/Login/Login';
+import MainCheayeon from './pages/chaehyun/Main/Main';
 
 // 석호's 컴포넌트
 import LoginSeokho from './pages/seokho/Login/Login';
@@ -37,6 +38,7 @@ const Router = () => {
         <Route path="/login-seongyong" element={<LoginSeongyong />} />
         <Route path="/main-seongyong" element={<MainSeongyong />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
