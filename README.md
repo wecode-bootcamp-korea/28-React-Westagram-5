@@ -1,4 +1,4 @@
-# 5팀 < Westagram Team Project> 
+# 5팀 
 
 
 # 팀이름 
