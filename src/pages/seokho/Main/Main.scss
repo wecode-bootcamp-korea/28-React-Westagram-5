@@ -1,0 +1,390 @@
+@import url('http://fonts.cdnfonts.com/css/billabong');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  width: 956px;
+  height: 760px;
+  background-color: rgb(232, 232, 232);
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  width: 956px;
+  padding: 12px 0;
+  font-family: 'Billabong', sans-serif;
+
+  &-logo {
+    align-items: center;
+    flex-basis: 116px;
+    display: flex;
+    font-size: 22px;
+    justify-content: space-between;
+
+    div {
+      width: 1px;
+      height: 24px;
+      border-left: 1px solid black;
+      // margin-left: 10px;
+    }
+
+    svg {
+      font-size: 20px;
+    }
+  }
+
+  input {
+    width: 164px;
+    padding: 2px 0;
+    padding-left: 62px;
+    border-radius: 5px;
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgb(196, 196, 196);
+
+    &::placeholder {
+      color: rgb(196, 196, 196);
+    }
+  }
+
+  &-icons {
+    display: flex;
+    // align-items: center;
+  }
+
+  &-icons img {
+    width: 22px;
+    // height: 24px;
+    margin: 0 10px;
+  }
+}
+
+/* container */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: 'Lobster', cursive;
+
+  .feeds {
+    margin-top: 40px;
+    margin-left: 128px;
+    width: 466px;
+
+    &-profile {
+      width: 466px;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+
+      &-imgAndName {
+        display: flex;
+        align-items: center;
+
+        span {
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .feeds-profile img {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+    }
+
+    .feeds-img-wrapper {
+      width: 100%;
+
+      .feeds-img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .feeds-icons {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      font-size: 18px;
+
+      &-left,
+      &-right {
+        padding: 8px 12px 6px;
+      }
+
+      &-left {
+        svg {
+          margin-right: 14px;
+
+          path {
+            // color: red;
+            display: inline-block;
+          }
+        }
+      }
+
+      &-right {
+        svg {
+          path {
+            // color: red;
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .feeds-writes {
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 0 12px 4px;
+
+      .writes-color {
+        color: rgb(160, 150, 150);
+      }
+
+      .writes-main {
+        font-size: 12px;
+        padding: 2px 0;
+      }
+
+      .writes-like {
+        display: flex;
+        align-items: center;
+        padding: 2px 0;
+
+        &-wrapper {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+          }
+        }
+
+        span {
+          padding-left: 6px;
+          font-size: 12px;
+        }
+      }
+
+      .writes-write {
+        list-style: none;
+        padding: 2px 0;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          font-size: 12px;
+          display: flex;
+          justify-content: space-between;
+
+          img {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
+
+    .feeds-comment {
+      padding: 12px;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgb(196, 196, 196);
+
+      input {
+        padding: 0;
+        border: none;
+        background-color: white;
+        font-size: 12px;
+        width: 90%;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        border: none;
+        background-color: white;
+        font-size: 12px;
+        color: rgb(51, 143, 255);
+      }
+    }
+  }
+
+  /* mainright */
+  .mainright {
+    width: 225px;
+    height: 655px;
+    margin-top: 40px;
+    margin-right: 80px;
+
+    &-name {
+      width: 225px;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      &-word {
+        font-size: 12px;
+        margin-left: 10px;
+      }
+
+      #wecode {
+        font-size: 6px;
+        color: rgb(160, 150, 150);
+      }
+    }
+
+    .mainright-story {
+      width: 225px;
+      padding: 6px 10px 0 10px;
+      background-color: white;
+      border: 1px solid rgb(196, 196, 196);
+      overflow: hidden;
+
+      .story-storyAndview {
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+
+        .story {
+          color: rgb(196, 196, 196);
+          font-size: 10px;
+        }
+
+        .all {
+          font-weight: bolder;
+        }
+      }
+
+      .story-people {
+        display: flex;
+        flex-direction: column;
+
+        .story-profile {
+          display: flex;
+          font-size: 12px;
+          margin-bottom: 10px;
+          align-items: center;
+
+          .time {
+            color: rgb(196, 196, 196);
+          }
+        }
+
+        .story-profile img {
+          width: 24px;
+          height: 24px;
+          border: 1px solid black;
+          border-radius: 50%;
+        }
+
+        .story-profile p {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .mainright-suggest {
+      display: flex;
+      flex-direction: column;
+      width: 225px;
+      padding: 6px 10px 0 10px;
+      background-color: white;
+      margin-top: 12px;
+      border: 1px solid rgb(196, 196, 196);
+
+      .suggest-storyAndview {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        margin-bottom: 6px;
+
+        .story {
+          color: rgb(196, 196, 196);
+          font-size: 10px;
+        }
+
+        .all {
+          font-weight: bolder;
+        }
+      }
+
+      .suggest-people {
+        display: flex;
+        flex-direction: column;
+
+        .time {
+          color: rgb(196, 196, 196);
+        }
+
+        .suggest-profile {
+          display: flex;
+          font-size: 12px;
+          margin-bottom: 10px;
+          align-items: center;
+          justify-content: space-between;
+
+          .follow {
+            color: #067ff0;
+          }
+
+          .suggest-profileflex {
+            display: flex;
+            align-items: center;
+
+            p {
+              margin-left: 10px;
+            }
+          }
+        }
+
+        .suggest-profile img {
+          width: 24px;
+          height: 24px;
+          border: 1px solid black;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .mainright-terms {
+      font-size: 12px;
+      color: rgb(196, 196, 196);
+      margin-top: 10px;
+
+      .INSTA {
+        margin-top: 10px;
+      }
+    }
+  }
+}
