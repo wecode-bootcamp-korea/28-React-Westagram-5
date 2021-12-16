@@ -8,18 +8,20 @@
 }
 
 body {
-  width: 956px;
-  height: 760px;
   background-color: rgb(232, 232, 232);
 }
 
 /* navbar */
+.navbarFixed {
+  position: fixed;
+  width: 100%;
+}
+
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: white;
-  width: 956px;
   padding: 12px 0;
   font-family: 'Billabong', sans-serif;
 
@@ -71,16 +73,16 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   font-family: 'Lobster', cursive;
 
   .feeds {
-    margin-top: 40px;
-    margin-left: 128px;
+    margin-top: 80px;
+    margin-right: 40px;
     width: 466px;
 
     &-profile {
-      width: 466px;
+      // width: 466px;
       padding: 12px;
       display: flex;
       justify-content: space-between;
@@ -234,9 +236,9 @@ body {
   /* mainright */
   .mainright {
     width: 225px;
-    height: 655px;
-    margin-top: 40px;
-    margin-right: 80px;
+    // height: 655px;
+    margin-top: 80px;
+    // margin-right: 80px;
 
     &-name {
       width: 225px;
