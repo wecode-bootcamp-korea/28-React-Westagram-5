@@ -25,7 +25,6 @@ $border-style: 2px solid rgb(233, 233, 233);
     align-items: center;
     width: 700px;
     padding: 30px;
-    // height: 760px;
     border: $border-style;
     border-radius: 2px;
     background-color: white;
@@ -43,29 +42,16 @@ $border-style: 2px solid rgb(233, 233, 233);
       input {
         width: 538px;
         padding: 24px;
-        // height: 76px;
         background-color: #f7f7f7;
         border: $border-style;
         border-radius: 5px;
         font-size: 18px;
-        // padding-left: 20px;
         margin-bottom: 16px;
 
         &::placeholder {
           color: rgb(145, 145, 145);
         }
       }
-
-      // function State() {
-      //   const [color, setColor] = useState('red');
-
-      //   return (
-      //       <div>
-      //         <h1 style={{ color: color }}>Function Component | State</h1>
-      //         <button onClick={() => setColor('blue')}>Click</button>
-      //       </div>
-      //   );
-      // }
 
       button {
         margin-top: 20px;
@@ -74,7 +60,6 @@ $border-style: 2px solid rgb(233, 233, 233);
       #login-btn {
         width: 538px;
         padding: 18px;
-        // height: 60px;
         background-color: #c4e0fb;
         border-style: none;
         border-radius: 5px;
