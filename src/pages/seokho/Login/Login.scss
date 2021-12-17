@@ -56,6 +56,17 @@ $border-style: 2px solid rgb(233, 233, 233);
         }
       }
 
+      // function State() {
+      //   const [color, setColor] = useState('red');
+
+      //   return (
+      //       <div>
+      //         <h1 style={{ color: color }}>Function Component | State</h1>
+      //         <button onClick={() => setColor('blue')}>Click</button>
+      //       </div>
+      //   );
+      // }
+
       button {
         margin-top: 20px;
       }

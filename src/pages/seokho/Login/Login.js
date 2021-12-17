@@ -2,20 +2,35 @@ import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 import { useState } from 'react';
 
-// event.target.value
-
 const Login = () => {
   const navigate = useNavigate();
   const goTomain = () => {
     navigate('/main-seokho');
   };
 
-  const [text, setText] = useState();
+  const [idText, setIdText] = useState('');
+  const [pwText, setPwText] = useState('');
 
   function handleIdInput(event) {
-    setText(event.target.value);
-    console.log(event.target.value);
+    setIdText(event.target.value);
+    // console.log(event.target.value);
   }
+
+  function handlePwInput(event) {
+    setPwText(event.target.value);
+    // console.log(event.target.value);
+  }
+
+  // const [color, setColor] = useState('#c4e0fb');
+
+  // function idColorChange(event) {}
+
+  // function pwColorChange(event) {}
+
+  // const buttonColor = (조건) ? 버튼컬러 활성화 : 버튼컬러 비활성화
+
+  // ID - @ 포함 -> 버튼 컬러 활성화
+  // PW - 5글자 이상 -> 버튼 컬러 활성화
 
   return (
     <div className="mainContainer">
@@ -29,7 +44,7 @@ const Login = () => {
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
-            onChange={handleIdInput}
+            onChange={handlePwInput}
             type="password"
             id="login-pw"
             placeholder="비밀번호"
