@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/main-chaehyun');
   };
+  function handleIdInput(e) {
+    setId(e.target.value);
+  }
+  function handlePwInput(e) {
+    setPw(e.target.value);
+  }
+
   return (
     <body>
       <div className="wrap">
@@ -16,8 +25,14 @@ const Login = () => {
             type="text"
             id="id"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            onChange={e => handleIdInput(e)}
           />
-          <input type="password" id="password" placeholder="비밀번호" />
+          <input
+            type="password"
+            id="password"
+            placeholder="비밀번호"
+            onChange={e => handlePwInput(e)}
+          />
           <button className="btn">로그인</button>
         </div>
         <div className="forget_pw">

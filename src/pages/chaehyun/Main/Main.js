@@ -11,7 +11,7 @@ const Main = () => {
         </div>
 
         <div className="elements_2">
-          <img className="instagram_icon" src="/images/search.png" />
+          <img className="instagram_icon" src="/images/search.png" alt="a" />
           <input type="text" placeholder="검색" />
         </div>
 
