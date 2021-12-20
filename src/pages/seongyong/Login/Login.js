@@ -56,12 +56,12 @@ const Login = () => {
           </div>
           <button
             className={buttonOn ? 'onBtn' : 'offBtn'}
-            // onClick={goToMain}
+            onClick={goToMain}
             id="loginBtn"
             type="button"
-            disabled={userId === '' || userPw === '' ? true : false}
+            disabled={userId === '' || userPw === '' ? 'true' : 'false'}
           >
-            로그인
+            로 그인
           </button>
           <a href="https://www.instagram.com/accounts/password/reset/">
             <footer>비밀번호를 잊으셨나요?</footer>
