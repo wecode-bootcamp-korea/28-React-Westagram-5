@@ -233,8 +233,13 @@ body {
       button {
         border: none;
         background-color: white;
+        opacity: 0.5;
         font-size: 12px;
         color: rgb(51, 143, 255);
+
+        &.blue {
+          opacity: 1;
+        }
       }
     }
   }

@@ -8,15 +8,26 @@ import MainNav from './MainNav';
 const Main = () => {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
+  const [btnActivated, setBtnActivated] = useState(false);
 
   const updateComment = e => {
     setComment(e.target.value);
+    if (e.target.value) {
+      setBtnActivated(true);
+    } else {
+      setBtnActivated(false);
+    }
   };
 
   const addFeedComment = () => {
-    setCommentList([...commentList, comment]); // ... -> 스프레드 : 봉투를 전부 풀어해친 후 묶는다 느낌, 빈배열(commentList)을 풀어해친 후 새로 들어오는 문자열(comment)을 배열에 넣어 출력, [...@, ...@]형태 자주 쓰임
-    // const arr = commentList.concat(comment); // 빈배열(commentList)에 concat 메소드를 활용해서 새로 들어오는 문자열(comment)를 넣어 변수 arr에 할당
-    // setCommentList(arr); // 배열 arr을 setCommentList에 담아 commentList에 출력
+    if (!comment) return;
+    setCommentList([...commentList, comment]);
+    // ... -> 스프레드 : 봉투를 전부 풀어해친 후 묶는다 느낌, 빈배열(commentList)을 풀어해친 후 새로 들어오는 문자열(comment)을 배열에 넣어 출력, [...@, ...@]형태 자주 쓰임
+    // const arr = commentList.concat(comment); -> 빈배열(commentList)에 concat 메소드를 활용해서 새로 들어오는 문자열(comment)를 넣어 변수 arr에 할당
+    // setCommentList(arr); -> 배열 arr을 setCommentList에 담아 commentList에 출력
+
+    setComment('');
+    setBtnActivated(false);
   };
   console.log(commentList);
 
@@ -29,8 +40,6 @@ const Main = () => {
       addFeedComment();
     }
   };
-
-  // e.preventDefault();
 
   return (
     <>
@@ -104,7 +113,11 @@ const Main = () => {
               type="text"
               placeholder="댓글 달기..."
             />
-            <button className="submit" type="button" onClick={addFeedComment}>
+            <button
+              className={btnActivated ? 'blue' : ''}
+              type="button"
+              onClick={addFeedComment}
+            >
               게시
             </button>
           </div>
