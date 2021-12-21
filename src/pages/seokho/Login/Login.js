@@ -9,13 +9,12 @@ const Login = () => {
   };
 
   const [idText, setIdText] = useState('');
-
   function handleIdInput(event) {
     setIdText(event.target.value);
+    // console.log(idText);
   }
 
   const [pwText, setPwText] = useState('');
-
   function handlePwInput(event) {
     setPwText(event.target.value);
   }
@@ -30,11 +29,23 @@ const Login = () => {
 
   // (@ 포함 되어있으면 & 5 글자 이상이면) ? 'blue' : '#c4e0fb'
 
+  const keyEnter = e => {
+    if (e.key === 'Enter') {
+      Login();
+    }
+  };
+
+  const Login = () => {};
+
   return (
     <div className="mainContainer">
       <main className="container">
         <h1>Westagram</h1>
-        <div onChange={buttonColorChange} className="login">
+        <form
+          onKeyPress={keyEnter}
+          onChange={buttonColorChange}
+          className="login"
+        >
           <input
             onChange={handleIdInput}
             type="text"
@@ -57,7 +68,7 @@ const Login = () => {
           </button>
           {/* <button id="login-btn">로그인</button> */}
           {/* `${color}` 백틱써도 되는데 무슨 차이인지 모르겠음. 확인하기. */}
-        </div>
+        </form>
         <div className="forgetpw">비밀번호를 잊으셨나요?</div>
       </main>
     </div>

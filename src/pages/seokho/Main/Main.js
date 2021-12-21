@@ -1,27 +1,40 @@
 import React from 'react';
-// import { Link, useNavigate } from "react-router-dom";
 import './Main.scss';
-
 import '@fortawesome/fontawesome-free/js/all.js';
+import { useEffect, useState } from 'react/cjs/react.development';
+
+import MainNav from './MainNav';
 
 const Main = () => {
+  const [comment, setComment] = useState('');
+  const [commentList, setCommentList] = useState([]);
+
+  const updateComment = e => {
+    setComment(e.target.value);
+  };
+
+  const addFeedComment = () => {
+    setCommentList([...commentList, comment]); // ... -> 스프레드 : 봉투를 전부 풀어해친 후 묶는다 느낌, 빈배열(commentList)을 풀어해친 후 새로 들어오는 문자열(comment)을 배열에 넣어 출력, [...@, ...@]형태 자주 쓰임
+    // const arr = commentList.concat(comment); // 빈배열(commentList)에 concat 메소드를 활용해서 새로 들어오는 문자열(comment)를 넣어 변수 arr에 할당
+    // setCommentList(arr); // 배열 arr을 setCommentList에 담아 commentList에 출력
+  };
+  console.log(commentList);
+
+  // useEffect(() => {
+  //   console.log('commentList', commentList);
+  // }, [commentList]);
+
+  const keyEnter = e => {
+    if (e.key === 'Enter') {
+      addFeedComment();
+    }
+  };
+
+  // e.preventDefault();
+
   return (
     <>
-      <div className="navbarFixed">
-        <nav className="navbar">
-          <div className="navbar-logo">
-            <i className="fab fa-instagram" />
-            <div> </div>
-            <span> Westagram</span>
-          </div>
-          <input type="text" placeholder="검색" id="navbar-search" />
-          <div className="navbar-icons">
-            <img src="images/seokho/explore.png" alt="explore" />
-            <img src="images/seokho/heart.png" alt="heart" />
-            <img src="images/seokho/profile.png" alt="profile" />
-          </div>
-        </nav>
-      </div>
+      <MainNav />
       <main className="container">
         <aricle className="feeds">
           <div className="feeds-profile">
@@ -71,21 +84,31 @@ const Main = () => {
                 <span>white 컬러가 좋네요</span>
                 <img src="images/seokho/heart.png" alt="heart" />
               </li>
-              <li className="writes-color">42분 전</li>
+              {commentList.map(comment => {
+                return (
+                  <li>
+                    Seokho__lee {comment}
+                    <img src="images/seokho/heart.png" alt="heart" />
+                  </li>
+                );
+              })}
+              <li id="writes-color">42분 전</li>
             </ul>
           </div>
           <div className="feeds-comment">
             <input
+              value={comment}
+              onChange={updateComment}
+              onKeyPress={keyEnter}
               className="addComments"
               type="text"
               placeholder="댓글 달기..."
             />
-            <button className="submit" type="button">
+            <button className="submit" type="button" onClick={addFeedComment}>
               게시
             </button>
           </div>
         </aricle>
-
         <aside className="mainright">
           <div className="mainright-name">
             <img

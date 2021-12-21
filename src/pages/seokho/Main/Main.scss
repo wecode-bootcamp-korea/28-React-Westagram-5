@@ -32,7 +32,7 @@ body {
     font-size: 22px;
     justify-content: space-between;
 
-    div {
+    .borderLine {
       width: 1px;
       height: 24px;
       border-left: 1px solid black;
@@ -154,9 +154,15 @@ body {
       flex-direction: column;
       padding: 0 12px 4px;
 
-      .writes-color {
+      #writes-color {
+        font-size: 6px;
+        margin-top: 4px;
         color: rgb(160, 150, 150);
       }
+
+      // #writes-color2 {
+      //   color: rgb(160, 150, 150);
+      // }
 
       .writes-main {
         font-size: 12px;
