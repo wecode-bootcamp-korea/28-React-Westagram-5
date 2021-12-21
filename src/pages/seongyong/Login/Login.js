@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
   const navigate = useNavigate();
 
   const goToMain = () => {
+    console.log('is working, go to main');
     navigate('/main-seongyong');
   };
 
@@ -19,8 +20,8 @@ const Login = () => {
 
   const handlePwInput = event => {
     setUserPw(event.target.value);
-    console.log(handlePwInput);
   };
+  console.log(handlePwInput);
 
   const [buttonOn, setButtonOn] = useState(false);
 
@@ -29,7 +30,6 @@ const Login = () => {
       ? setButtonOn(true)
       : setButtonOn(false);
   };
-  console.log(isPassedLogin);
 
   return (
     <div className="bigcontainer">
@@ -59,9 +59,9 @@ const Login = () => {
             onClick={goToMain}
             id="loginBtn"
             type="button"
-            disabled={userId === '' || userPw === '' ? 'true' : 'false'}
+            disabled={userId === '' || userPw === '' ? true : false}
           >
-            로 그인
+            로그인
           </button>
           <a href="https://www.instagram.com/accounts/password/reset/">
             <footer>비밀번호를 잊으셨나요?</footer>

@@ -90,17 +90,14 @@ const Main = () => {
                 </div>
               </div>
               <div className="middleComment">
-                <span id="wecode">Wecode_28기 엄성용</span>
-                <span>
-                  사모예드견(Samoyed dog)은 시베리아 원산으로
-                  썰매용·가정견·애완용으로 많이 기른다. 북부 시베리아의 유목민
-                  사모예드족이 옛날부터 기르던 썰매용 개로서, 부족의 이름을 따서
-                  명명되었다. 19세기에 와서 미국과 영국의 북극 탐험가들에 의하여
-                  발전되어 썰매 끄는 개로서 그들과 함께 활약한 후 처음 서양
-                  각국에 소개되었다. 우아한 용모와 대담한 성격, 썰매용으로
-                  단련된 강력한 힘을 인정받아 세계에 알려지면서 세계의 304여개의
-                  견종 사이에서 가장 비싼 견종이라고도 한다.
-                </span>
+                <ul>
+                  <ol id="wecode">Wecode_28기 엄성용</ol>
+                  <ol>
+                    사모예드견(Samoyed dog)은 썰매용·가정견·애완용으로 많이
+                    기른다. 북부 시베리아의 유목민 사모예드족이 옛날부터 기르던
+                    썰매용 개로서, 부족의 이름을 따서 명명되었다.
+                  </ol>
+                </ul>
               </div>
               <div className="bottomComment">
                 <input type="text" placeholder="댓글달기" />
