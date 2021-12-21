@@ -7,7 +7,7 @@ const Main = () => {
       <nav>
         <div className="elements_1">
           <img className="instagram_icon" src="/images/instagram.png" />
-          <span className="title">westagram</span>
+          <span className="title2">westagram</span>
         </div>
 
         <div className="elements_2">
