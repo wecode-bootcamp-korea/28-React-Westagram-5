@@ -22,6 +22,33 @@ const Login = () => {
   function btnActivate() {
     return id.includes('@') && pw.length > 3 ? setBtn(true) : setBtn(false);
   }
+  /*
+  function requestLogin() {
+    fetch('http://10.58.3.111:8000/users/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+  }
+  */
+  function requestSign() {
+    fetch('http://10.58.3.111:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        full_name: '옥채현',
+        emaidl: id,
+        passworbd: pw,
+        username: '채현',
+      }),
+    })
+      // 여기까지가 나중에 받을 값이라고 생각하시면 되요= {}
+      .then(response => response.json()) // 자바스크립트 객체로 읽을수있게 변경
+      .then(result => console.log('결과: ', result)); // result = 실제 데이터가 객체형식으로
+  }
 
   return (
     <body>
@@ -40,7 +67,9 @@ const Login = () => {
             placeholder="비밀번호"
             onChange={e => handlePwInput(e)}
           />
-          <button className={btn ? 'btnOn' : 'btnOff'}>로그인</button>
+          <button onClick={requestSign} className={btn ? 'btnOn' : 'btnOff'}>
+            로그인
+          </button>
         </div>
         <div className="forget_pw">
           <a href="http://google.com">비밀번호를 잊으셨나요?</a>
