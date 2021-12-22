@@ -3,13 +3,14 @@ import './Main.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
 import { useEffect, useState } from 'react/cjs/react.development';
 
-import MainNav from './MainNav';
+import MainNav from './child/MainNav';
+import MainComment from './child/MainComment';
 
 const Main = () => {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
   const [btnActivated, setBtnActivated] = useState(false);
-
+  console.log(commentList);
   const updateComment = e => {
     setComment(e.target.value);
     if (e.target.value) {
@@ -23,6 +24,7 @@ const Main = () => {
     if (!comment) return;
     setCommentList([...commentList, comment]);
     // ... -> 스프레드 : 봉투를 전부 풀어해친 후 묶는다 느낌, 빈배열(commentList)을 풀어해친 후 새로 들어오는 문자열(comment)을 배열에 넣어 출력, [...@, ...@]형태 자주 쓰임
+
     // const arr = commentList.concat(comment); -> 빈배열(commentList)에 concat 메소드를 활용해서 새로 들어오는 문자열(comment)를 넣어 변수 arr에 할당
     // setCommentList(arr); -> 배열 arr을 setCommentList에 담아 commentList에 출력
 
@@ -93,13 +95,8 @@ const Main = () => {
                 <span>white 컬러가 좋네요</span>
                 <img src="images/seokho/heart.png" alt="heart" />
               </li>
-              {commentList.map(comment => {
-                return (
-                  <li>
-                    Seokho__lee {comment}
-                    <img src="images/seokho/heart.png" alt="heart" />
-                  </li>
-                );
+              {commentList.map(commentItem => {
+                return <MainComment comment={commentItem} key="idx" />;
               })}
               <li id="writes-color">42분 전</li>
             </ul>
