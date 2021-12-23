@@ -1,0 +1,257 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+#all-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  .navi-wrapper {
+    display: flex;
+    max-width: 935px;
+    width: 100%;
+    height: 30px;
+    padding: 15px;
+    position: fixed;
+    top: 0px;
+    border-bottom: 1px solid #e6e6e6;
+    z-index: 9999;
+    background-color: #fff;
+    justify-content: space-between;
+    .navi-logo {
+      display: flex;
+      padding-left: 15px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+      .navi-logo-text {
+        font-family: 'Lobster', cursive;
+        font-size: 25px;
+        color: #403d3d;
+        border-left: 1px solid #403d3d;
+      }
+    }
+    .navi-input input {
+      height: 25px;
+      width: 200px;
+      background-color: #fafafa;
+      border: 1px solid #eaeaea;
+    }
+    .navi-icon {
+      padding-right: 15px;
+      img {
+        padding: 0px 10px;
+      }
+    }
+  }
+  .content-wrapper {
+    display: flex;
+    max-width: 965px;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-top: 200px;
+    background-color: #fafafa;
+    .feed {
+      width: 615px;
+      border: 2px solid #e6e6e6;
+      background-color: white;
+      .feed-profile {
+        display: flex;
+        align-items: center;
+        height: 45px;
+
+        .feed-profile-left {
+          display: flex;
+          align-items: center;
+        }
+        .feed-profile-photo {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            object-fit: cover;
+          }
+        }
+        .feed-profile-account {
+        }
+      }
+    }
+    .feed-photo-container {
+      padding-top: 60px;
+      .feed-photo {
+        img {
+          object-fit: cover;
+        }
+      }
+      .feed-under-photo-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+        padding-right: 15px;
+        .feed-icons {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px 0px;
+          .feed-icons-left {
+            img {
+              padding: 0px 10px 0px 0px;
+            }
+          }
+          .feed-comment {
+            padding-left: 10px;
+          }
+          .feed-reply-wrapper {
+            border-bottom: 1px solid gray;
+            padding: 5px 0px;
+            list-style: none;
+          }
+          .feed-reply-input {
+            display: flex;
+            padding: 0px 0px 15px 0px;
+            .feed-reply-input-input {
+              border: none;
+              width: 520px;
+              font-size: 15px;
+              padding: 5px 5px 5px 15px;
+            }
+          }
+          .feed-reply-input-button {
+            border: none;
+            background-color: white;
+            color: blue;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .sidebar-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      padding-top: 30px;
+      padding-right: 30px;
+      width: 280px;
+      .sidebar-account {
+        display: flex;
+        align-items: center;
+        padding-bottom: 15px;
+        .sidebar-account-image {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+        .sidebar-account-profile-wrapper {
+          padding-left: 10px;
+        }
+        .sidebar-account-profile-bwrapper {
+          display: flex;
+          color: #a2a2a2;
+        }
+        .sidebar-account-profile-bleft {
+          padding-right: 10px;
+        }
+      }
+    }
+    .sidebar-story {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e6e6e6;
+      background-color: white;
+      padding: 10px 15px;
+      .sidebar-story-twrapper {
+        display: flex;
+        justify-content: space-between;
+        .sidebar-story-tleft {
+          color: #a2a2a2;
+        }
+        .sidebar-story-bwrapper {
+          display: flex;
+          flex-direction: column;
+          .sidebar-story-account1 {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            .sidebar-story-account1-image {
+              border-radius: 50%;
+              overflow: hidden;
+              width: 35px;
+              height: 35px;
+              img {
+                object-fit: cover;
+              }
+            }
+            .sidebar-story-account1-right {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding-left: 10px;
+              .sidebar-story-account1-bright {
+                color: #a2a2a2;
+              }
+            }
+          }
+        }
+        .sidebar-story-account2 {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          .sidebar-story-account2-image {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 35px;
+            height: 35px;
+            img {
+              object-fit: cover;
+            }
+          }
+          .sidebar-story-account2-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10px;
+          }
+          .sidebar-story-account2-bright {
+            color: #a2a2a2;
+          }
+        }
+        .sidebar-story-account3 {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          .sidebar-story-account3-image {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 35px;
+            height: 35px;
+            img {
+              object-fit: cover;
+            }
+          }
+          .sidebar-story-account3-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10px;
+            .sidebar-story-account3-bright {
+              color: #a2a2a2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
