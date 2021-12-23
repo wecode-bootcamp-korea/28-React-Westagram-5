@@ -2,12 +2,33 @@ import React, { useState } from 'react';
 import './Main.scss';
 
 const Main = () => {
-  const [comment, setComment] = useState();
+  const [comment, setComment] = useState('');
+  // const [lists, setLists] = useState([]);
+  // const [nextId, setNextId] = useState(0);
 
   const handleTextInput = event => {
     setComment(event.target.value);
     console.log(handleTextInput);
   };
+
+  // const submit = e => {
+  //   e.preventDefault()
+
+  // const about_lists = lists.concat({
+  //    //원래 있는 리스트에 붙여주기
+  //   id: nextId,
+  //   text: input,
+  //  });
+
+  // setNextId(nextId + 1);
+  // setLists(about_lists);
+  // setInput('');
+
+  // const input_list = lists.map(list => (
+  //   <li>
+  //     <b>wecode_28기 엄성용</b> : {list.text}
+  //   </li>
+  // ));
 
   return (
     <>
@@ -97,34 +118,25 @@ const Main = () => {
                   <h6>Wecode_28기 외 4명이 좋아합니다</h6>
                 </div>
               </div>
-              <div className="middleComment">
-                <form>
-                  <ul>
-                    <li id="wecode">Wecode_28기 엄성용</li>
-                    <li>
-                      사모예드견(Samoyed dog)은 썰매용·가정견·애완용으로 많이
-                      기른다. 북부 시베리아의 유목민 사모예드족이 옛날부터
-                      기르던 썰매용 개로서, 부족의 이름을 따서 명명되었다.
-                    </li>
-                  </ul>
-                  <ul>
-                    <li id="wecode">Wecode_28기 엄성용</li>
-                    <li>hi</li>
-                  </ul>
-                  <ul>
-                    <li id="wecode">Wecode_28기 엄성용</li>
-                    <li>hi</li>
-                  </ul>
-                  <div className="bottomComment">
-                    <input
-                      onChange={handleTextInput}
-                      type="text"
-                      placeholder="댓글달기"
-                    />
-                    <button type="button">게시</button>
-                  </div>
-                </form>
-              </div>
+              <form>
+                <ul>
+                  <li id="wecode">Wecode_28기 엄성용</li>
+                  <li>
+                    사모예드견(Samoyed dog)은 썰매용·가정견·애완용으로 많이
+                    기른다. 북부 시베리아의 유목민 사모예드족이 옛날부터 기르던
+                    썰매용 개로서, 부족의 이름을 따서 명명되었다.
+                  </li>
+                </ul>
+                {/* <ul>{input_list}</ul> */}
+                <div className="bottomComment">
+                  <input
+                    onChange={handleTextInput}
+                    type="text"
+                    placeholder="댓글달기"
+                  />
+                  <button type="button">게시</button>
+                </div>
+              </form>
             </div>
           </div>
         </section>
