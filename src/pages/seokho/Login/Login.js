@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 import { useState } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,6 +38,32 @@ const Login = () => {
 
   const Login = () => {};
 
+  // const requestLogin = () => {
+  //   fetch('http://10.58.3.111:8000/users/login', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: idText,
+  //       password: pwText,
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(result => console.log('결과: ', result));
+  // };
+
+  // const requestSignup = () => {
+  //   fetch('http://10.58.3.111:8000/users/signup', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       full_name: '이석호',
+  //       email: idText,
+  //       password: pwText,
+  //       username: '석호',
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(result => console.log('결과: ', result));
+  // };
+
   return (
     <div className="mainContainer">
       <main className="container">
@@ -60,8 +87,11 @@ const Login = () => {
           />
           <button
             onClick={goTomain}
+            // onClick={requestLogin}
+            // onClick={requestSignup}
             id="login-btn"
             style={{ backgroundColor: color }}
+            type="button"
           >
             {' '}
             로그인{' '}
