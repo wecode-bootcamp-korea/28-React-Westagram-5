@@ -1,27 +1,50 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const goToMain = () => {
-    console.log('is working, go to main');
-    navigate('/main-seongyong');
-  };
-
   const [userId, setUserId] = useState('');
   const [userPw, setUserPw] = useState('');
 
+  const goToMain = () => {
+    navigate('/main-seongyong');
+
+    // console.log(userId, userPw);
+    // fetch('http://10.58.3.158:8000/users/signup', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: userId,
+    //     password: userPw,
+    //     name: '엄성용',
+    //     phone_number: '010-1234-5679',
+    //     date_of_birth: null,
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(result => console.log('결과: ', result));
+
+    // fetch('http://10.58.3.158:8000/users/login', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: userId,
+    //     password: userPw,
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(result => console.log('결과: ', result));
+  };
+
   const handleIdInput = event => {
     setUserId(event.target.value);
-    console.log(handlePwInput);
+    // console.log(handlePwInput);
   };
 
   const handlePwInput = event => {
     setUserPw(event.target.value);
   };
-  console.log(handlePwInput);
+  // console.log(handlePwInput);
 
   const [buttonOn, setButtonOn] = useState(false);
 

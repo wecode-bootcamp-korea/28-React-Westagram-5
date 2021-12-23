@@ -23,51 +23,50 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  .logo {
-    width: 100%;
-    height: 100%;
-    font-size: 35px;
-    padding-right: 100px;
-    font-family: 'Lobster', cursive;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    img {
-      width: 30px;
-      height: 30px;
-    }
-
-    span {
-      border-left: 2px solid black;
-      padding: 0 0 0 15px;
-    }
-
-    .info {
+    .logo {
+      width: 100%;
+      height: 100%;
+      font-size: 35px;
+      padding-right: 100px;
+      font-family: 'Lobster', cursive;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 10px;
-      padding: 10px;
 
       img {
-        margin: 15px;
+        width: 30px;
+        height: 30px;
+      }
+
+      span {
+        border-left: 2px solid black;
+        padding: 0 0 0 15px;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+        padding: 10px;
+
+        img {
+          margin: 15px;
+        }
       }
     }
-  }
 
-  .topLeft {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 150px;
+    .topLeft {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 150px;
+    }
   }
-
   .mainimg {
     width: 550px;
-    height: 600px;
+    height: 500px;
 
     img {
       width: 100%;
@@ -103,173 +102,183 @@ body {
 
   .mainBox {
     width: 550px;
-  }
+    margin-bottom: 100px;
 
-  .mainTop {
-    margin-top: 150px;
-    border: 1px solid #b9baba;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .main-top-left-wrapper #sea {
-    width: 50px;
-    height: 50px;
-    margin: 10px 0 10px 20px;
-    border-radius: 50%;
-  }
-
-  #insta {
-    margin-right: 20px;
-  }
-
-  .fa-ellipsis-h {
-    font-size: 30px;
-    margin: 20px 20px 0 0;
-    color: #b9baba;
-  }
-
-  .fa-heart {
-    width: 100px;
-  }
-
-  .mainTop h5 {
-    width: 150px;
-    margin: 20px 0 0 0;
-  }
-
-  .account {
-    padding-left: 10px;
-    text-align: left;
-
-    h6 {
-      margin: 0 auto;
+    .mainTop {
+      margin-top: 150px;
+      border: 1px solid #b9baba;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
     }
-  }
 
-  .main-top-left-wrapper {
-    width: 135px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .characters {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-    background-color: white;
-  }
-
-  .farContainer {
-    height: 40px;
-    width: 110px;
-    font-size: 20px;
-    padding-left: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .smallContainer {
-    font-size: 20px;
-    width: 15px;
-    padding-right: 35px;
-  }
-
-  .people {
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    img {
+    .main-top-left-wrapper #sea {
       width: 50px;
       height: 50px;
       margin: 10px 0 10px 20px;
       border-radius: 50%;
     }
-  }
 
-  .comment {
-    border-top: 1px solid #b9baba;
-    background-color: white;
-  }
-
-  .friend {
-    width: 220px;
-    height: 40px;
-    padding-left: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    img {
-      width: 20px;
-      height: 20px;
-      border-radius: 50px;
-      margin-right: 5px;
+    #insta {
+      margin-right: 20px;
     }
 
-    h6 {
-      margin: 0;
-    }
-  }
-
-  .middleComment {
-    height: 50px;
-    padding-left: 10px;
-    width: 550px;
-    text-align: left;
-
-    #wecode {
-      font-size: 12px;
-      font-weight: bolder;
-      width: 150px;
+    .fa-ellipsis-h {
+      font-size: 30px;
+      margin: 20px 20px 0 0;
+      color: #b9baba;
     }
 
-    ul {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      padding-left: 5px;
-      font-size: 8px;
-    }
-
-    ol {
-      text-align: left;
-      padding-left: 5px;
-      width: 100%;
-      font-size: 8px;
-    }
-  }
-
-  .bottomMain {
-    border: 1px solid #b9baba;
-  }
-
-  .bottomComment {
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    input {
-      width: 550px;
-      padding-left: 20px;
-      border: none;
-    }
-
-    button {
-      height: 30px;
+    .fa-heart {
       width: 100px;
+    }
+
+    .mainTop h5 {
+      width: 150px;
+      margin: 20px 0 0 0;
+    }
+
+    .account {
+      padding-left: 10px;
+      text-align: left;
+
+      h6 {
+        margin: 0 auto;
+      }
+    }
+
+    .main-top-left-wrapper {
+      width: 135px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .characters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       border: none;
       background-color: white;
-      color: gray;
-      padding-right: 20px;
+      border-bottom: 1px solid #b9baba;
+
+      .farContainer {
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        padding-left: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .fa-heart {
+        width: 20px;
+      }
+
+      .smallContainer {
+        font-size: 20px;
+        width: 15px;
+        padding-right: 35px;
+      }
+    }
+
+    .people {
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 50px;
+        height: 50px;
+        margin: 10px 0 10px 20px;
+        border-radius: 50%;
+      }
+    }
+    .bottomMain {
+      height: 20%;
+      border: 1px solid #b9baba;
+
+      .comment {
+        height: 100%;
+        background-color: white;
+        border: 1px solid #b9baba;
+
+        .friend {
+          width: 220px;
+          height: 40px;
+          padding-left: 10px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            margin-right: 5px;
+          }
+
+          h6 {
+            margin: 0;
+          }
+        }
+
+        .middleComment {
+          height: 40%;
+          width: 550px;
+          text-align: left;
+
+          #wecode {
+            font-size: 11px;
+            font-weight: bolder;
+            width: 130px;
+          }
+
+          form {
+            height: 100%;
+          }
+
+          ul {
+            display: flex;
+            justify-content: flex-start;
+            text-align: center;
+            padding-left: 5px;
+            font-size: 8px;
+          }
+
+          li {
+            text-align: left;
+            padding-left: 5px;
+            width: 100%;
+            font-size: 8px;
+            list-style: none;
+          }
+          .bottomComment {
+            width: 550px;
+            text-align: center;
+            padding-top: 10px 10px 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+              width: 420px;
+              padding-left: 20px;
+              border: none;
+            }
+
+            button {
+              height: 30px;
+              width: 80px;
+              border: none;
+              background-color: white;
+              color: gray;
+              padding-right: 10px;
+            }
+          }
+        }
+      }
     }
   }
 

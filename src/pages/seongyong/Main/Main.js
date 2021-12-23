@@ -1,6 +1,14 @@
+import React, { useState } from 'react';
 import './Main.scss';
 
 const Main = () => {
+  const [comment, setComment] = useState();
+
+  const handleTextInput = event => {
+    setComment(event.target.value);
+    console.log(handleTextInput);
+  };
+
   return (
     <>
       <section className="nav">
@@ -90,18 +98,32 @@ const Main = () => {
                 </div>
               </div>
               <div className="middleComment">
-                <ul>
-                  <ol id="wecode">Wecode_28기 엄성용</ol>
-                  <ol>
-                    사모예드견(Samoyed dog)은 썰매용·가정견·애완용으로 많이
-                    기른다. 북부 시베리아의 유목민 사모예드족이 옛날부터 기르던
-                    썰매용 개로서, 부족의 이름을 따서 명명되었다.
-                  </ol>
-                </ul>
-              </div>
-              <div className="bottomComment">
-                <input type="text" placeholder="댓글달기" />
-                <button type="button">게시</button>
+                <form>
+                  <ul>
+                    <li id="wecode">Wecode_28기 엄성용</li>
+                    <li>
+                      사모예드견(Samoyed dog)은 썰매용·가정견·애완용으로 많이
+                      기른다. 북부 시베리아의 유목민 사모예드족이 옛날부터
+                      기르던 썰매용 개로서, 부족의 이름을 따서 명명되었다.
+                    </li>
+                  </ul>
+                  <ul>
+                    <li id="wecode">Wecode_28기 엄성용</li>
+                    <li>hi</li>
+                  </ul>
+                  <ul>
+                    <li id="wecode">Wecode_28기 엄성용</li>
+                    <li>hi</li>
+                  </ul>
+                  <div className="bottomComment">
+                    <input
+                      onChange={handleTextInput}
+                      type="text"
+                      placeholder="댓글달기"
+                    />
+                    <button type="button">게시</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
