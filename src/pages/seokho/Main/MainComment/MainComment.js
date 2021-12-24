@@ -12,8 +12,7 @@ function MainComment(props) {
 export default MainComment;
 
 // <li key="idx">
-//       Seokho__lee {comment}
-//       {/* 커멘트를 props로 받아와야함 */}
-//       <img src="images/seokho/heart.png" alt="heart" />
-//     </li>
-//   );
+//   Seokho__lee {comment}
+//   {/* 커멘트를 props로 받아와야함 */}
+//   <img src="images/seokho/heart.png" alt="heart" />
+// </li>;

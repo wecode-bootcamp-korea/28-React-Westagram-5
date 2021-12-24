@@ -1,26 +1,28 @@
-import React from 'react';
-import './Main.scss';
+import React, { useEffect, useState } from 'react';
+import MainNav from './MainNav/MainNav';
+import MainComment from './MainComment/MainComment';
+import MainRight from './MainRight/MainRight';
 import '@fortawesome/fontawesome-free/js/all.js';
-import { useEffect, useState } from 'react/cjs/react.development';
-
-import MainNav from './child/MainNav';
-import MainComment from './child/MainComment';
-import MainRight from './child/MainRight';
+import './Main.scss';
+import './MainNav/MainNav.scss';
+import './MainRight/MainRight.scss';
 
 const Main = () => {
   const [comment, setComment] = useState('');
   const [commentList, setCommentList] = useState([]);
-  const [btnActivated, setBtnActivated] = useState(false);
-  // console.log(commentList);
+  // const [btnActivated, setBtnActivated] = useState(false);
+  console.log(comment.length);
 
   const updateComment = e => {
     setComment(e.target.value);
-    if (e.target.value) {
-      setBtnActivated(true);
-    } else {
-      setBtnActivated(false);
-    }
+    // if (e.target.value) {
+    //   setBtnActivated(true);
+    // } else {
+    //   setBtnActivated(false);
+    // }
   };
+
+  const isVariable = comment.length ? true : false;
 
   const addFeedComment = () => {
     if (!comment) return;
@@ -31,9 +33,8 @@ const Main = () => {
     // setCommentList(arr); -> 배열 arr을 setCommentList에 담아 commentList에 출력
 
     setComment('');
-    setBtnActivated(false);
+    // setBtnActivated(false);
   };
-  // console.log(commentList);
 
   const keyEnter = e => {
     if (e.key === 'Enter') {
@@ -41,66 +42,65 @@ const Main = () => {
     }
   };
 
-  const [data, setData] = useState([]);
+  const [commnetData, commnetSetData] = useState([]);
 
   useEffect(() => {
     fetch('/data/commentData.json')
       .then(res => res.json())
-      .then(res => setData(res));
+      .then(res => commnetSetData(res));
   }, []);
-  // console.log(data);
 
-  // const [feeds, setFeeds] = useState([]);
+  const isLogined = true;
+
   return (
     <>
       <MainNav />
       <main className="container">
         <aricle className="feeds">
-          <div className="feeds-profile">
-            <div className="feeds-profile-imgAndName">
+          <div className="feedsProfile">
+            <div className="feedsProfileImgAndName">
               <img src="images/seokho/My_Picture.jpeg" alt="My_Picture" />
               <span>Seokho__lee</span>
             </div>
             <i className="fas fa-ellipsis-h" />
           </div>
-          <section className="feeds-img-wrapper">
+          <section className="feedsImageWrapper">
             <img
               src="images/seokho/interior.jpeg"
               alt="interior"
               className="feeds-img"
             />
           </section>
-          <div className="feeds-icons">
-            <div className="feeds-icons-left">
-              {/* <i className="fas fa-heart" /> */}
+          <div className="feedsIcons">
+            <div className="feedsIconsLeft">
               <i class="far fa-heart" />
               <i className="far fa-comment" />
               <i className="fas fa-external-link-alt" />
             </div>
-            <div className="feeds-icons-right">
+            <div className="feedsIconsRight">
               <i className="far fa-bookmark" />
             </div>
           </div>
-          <div className="feeds-writes">
-            <div className="writes-like">
-              <div className="writes-like-wrapper">
+          <div className="feedsWrites">
+            <div className="writesLike">
+              <div className="writesLikeWrapper">
                 <img
                   src="images/seokho/contents-write-profile.jpg"
-                  alt="feeds-write-profile"
+                  alt="feedsWriteProfile"
                 />
                 <span>fritzhansen님 외 1,895명이 좋아합니다</span>
               </div>
             </div>
-            <span className="writes-main">
+            <span className="writesMain">
               Seokho__lee 미드센추리 모던 인테리어...
-              <span className="writes-color"> 더 보기</span>
+              <span className="writesColor"> 더 보기</span>
             </span>
-            <ul className="writes-write">
-              {data.map(ele => {
+            <ul className="writesWrite">
+              {commnetData.map(commentItem => {
                 return (
-                  <li key={ele.id}>
-                    <span>{ele.comment}</span>
-                    <img src={ele.src} alt={ele.alt} />
+                  <li key={commentItem.id}>
+                    <span>{commentItem.comment}</span>
+                    <img src={commentItem.src} alt={commentItem.alt} />
                   </li>
                 );
               })}
@@ -117,10 +117,10 @@ const Main = () => {
               {commentList.map(commentItem => {
                 return <MainComment comment={commentItem} key="idx" />;
               })}
-              <li id="writes-color">42분 전</li>
+              <li className="writesColor">42분 전</li>
             </ul>
           </div>
-          <div className="feeds-comment">
+          <div className="feedsComment">
             <input
               value={comment}
               onChange={updateComment}
@@ -130,7 +130,7 @@ const Main = () => {
               placeholder="댓글 달기..."
             />
             <button
-              className={btnActivated ? 'blue' : ''}
+              className={isVariable && 'blue'}
               type="button"
               onClick={addFeedComment}
             >
@@ -138,7 +138,7 @@ const Main = () => {
             </button>
           </div>
         </aricle>
-        <MainRight />
+        {isLogined && <MainRight />}
       </main>
     </>
   );

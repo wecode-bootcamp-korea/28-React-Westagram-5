@@ -1,0 +1,54 @@
+/* navbar */
+.navbarFixed {
+  position: fixed;
+  width: 100%;
+
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 12px 0;
+    font-family: 'Billabong', sans-serif;
+
+    &Logo {
+      align-items: center;
+      flex-basis: 116px;
+      display: flex;
+      font-size: 22px;
+      justify-content: space-between;
+
+      &Line {
+        width: 1px;
+        height: 24px;
+        border-left: 1px solid black;
+      }
+
+      svg {
+        font-size: 20px;
+      }
+    }
+
+    input {
+      width: 164px;
+      padding: 2px 0;
+      padding-left: 62px;
+      border-radius: 5px;
+      background-color: rgb(247, 247, 247);
+      border: 1px solid rgb(196, 196, 196);
+
+      &::placeholder {
+        color: rgb(196, 196, 196);
+      }
+    }
+
+    &Icons {
+      display: flex;
+
+      img {
+        width: 22px;
+        margin: 0 10px;
+      }
+    }
+  }
+}

@@ -1,59 +1,59 @@
 export default function MainRight(props) {
   return (
     <aside className="mainright">
-      <div className="mainright-name">
+      <div className="mainrightName">
         <img
           src="images/seokho/My_Picture.jpeg"
           alt="My_Picture"
           id="mainright-img"
         />
-        <div className="mainright-name-word">
+        <div className="mainrightNameWord">
           <div>Seokho__lee</div>
           <div id="wecode">WeCode | 위코드 </div>
         </div>
       </div>
-      <div className="mainright-story">
-        <div className="story-storyAndview">
+      <div className="mainrightStory">
+        <div className="mainrightStoryAndView">
           <div className="story">스토리</div>
           <div className="all">모두 보기</div>
         </div>
-        <div className="story-people">
-          <div className="story-profile">
+        <div className="mainrightStoryPeople">
+          <div className="storyProfile">
             <img src="images/seokho/profile.png" alt="" />
             <div>
               <p>yum_s</p>
               <p className="time">16분 전</p>
             </div>
           </div>
-          <div className="story-profile">
+          <div className="storyProfile">
             <img src="images/seokho/profile.png" alt="" />
             <div>
               <p>drink_eat_drink</p>
               <p className="time">3시간 전</p>
             </div>
           </div>
-          <div className="story-profile">
+          <div className="storyProfile">
             <img src="images/seokho/profile.png" alt="" />
             <div>
               <p>hyukyc</p>
               <p className="time">20분 전</p>
             </div>
           </div>
-          <div className="story-profile">
+          <div className="storyProfile">
             <img src="images/seokho/profile.png" alt="" />
             <p>jiminkeek</p>
           </div>
         </div>
       </div>
 
-      <div className="mainright-suggest">
-        <div className="suggest-storyAndview">
+      <div className="mainrightSuggest">
+        <div className="suggestStoryAndview">
           <div className="story">회원님을 위한 추천</div>
           <div className="all">모두 보기</div>
         </div>
-        <div className="suggest-people">
-          <div className="suggest-profile">
-            <div className="suggest-profileflex">
+        <div className="suggestPeople">
+          <div className="suggestProfile">
+            <div className="suggestProfileflex">
               <img src="images/seokho/profile.png" alt="" />
               <div>
                 <p>joaaaaahye</p>
@@ -63,8 +63,8 @@ export default function MainRight(props) {
             <div className="follow">팔로우</div>
           </div>
 
-          <div className="suggest-profile">
-            <div className="suggest-profileflex">
+          <div className="suggestProfile">
+            <div className="suggestProfileflex">
               <img src="images/seokho/profile.png" alt="" />
               <div>
                 <p>rampart81</p>
@@ -74,8 +74,8 @@ export default function MainRight(props) {
             <div className="follow">팔로우</div>
           </div>
 
-          <div className="suggest-profile">
-            <div className="suggest-profileflex">
+          <div className="suggestProfile">
+            <div className="suggestProfileflex">
               <img src="images/seokho/profile.png" alt="" />
               <div>
                 <p>shawnjjoo</p>
@@ -86,7 +86,7 @@ export default function MainRight(props) {
           </div>
         </div>
       </div>
-      <div className="mainright-terms">
+      <div className="mainrightTerms">
         <div>
           instagram 정보 . 지원 . 홍보 센터 . API .<br />
           채용 정보 . 개인정보처리방침 . 약관 . <br />

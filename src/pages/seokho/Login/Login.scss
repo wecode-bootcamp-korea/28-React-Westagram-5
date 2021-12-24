@@ -2,7 +2,7 @@ $border-style: 2px solid rgb(233, 233, 233);
 
 @import url('http://fonts.cdnfonts.com/css/billabong');
 
-@mixin maincontainerSet {
+@mixin containerOutsideSet {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +16,8 @@ $border-style: 2px solid rgb(233, 233, 233);
   margin: 0px;
 }
 
-.mainContainer {
-  @include maincontainerSet;
+.containerOutside {
+  @include containerOutsideSet;
 
   .container {
     display: flex;
@@ -30,9 +30,9 @@ $border-style: 2px solid rgb(233, 233, 233);
     background-color: white;
 
     h1 {
-      font-size: 120px;
       margin: 70px;
       font-family: 'Billabong', sans-serif;
+      font-size: 120px;
     }
 
     .login {
@@ -42,11 +42,11 @@ $border-style: 2px solid rgb(233, 233, 233);
       input {
         width: 538px;
         padding: 24px;
+        margin-bottom: 16px;
         background-color: #f7f7f7;
         border: $border-style;
         border-radius: 5px;
         font-size: 18px;
-        margin-bottom: 16px;
 
         &::placeholder {
           color: rgb(145, 145, 145);
@@ -57,21 +57,28 @@ $border-style: 2px solid rgb(233, 233, 233);
         margin-top: 20px;
       }
 
-      #login-btn {
+      .commonButton {
         width: 538px;
         padding: 18px;
-        background-color: #c4e0fb;
         border-style: none;
         border-radius: 5px;
         font-size: 24px;
         font-weight: bold;
         color: white;
       }
+
+      .btnOn {
+        background-color: blue;
+      }
+
+      .btnOff {
+        background-color: #c4e0fb;
+      }
     }
 
     .forgetpw {
-      font-size: 24px;
       margin: 120px 0px 0px 0px;
+      font-size: 24px;
       color: rgb(11, 29, 131);
     }
   }
