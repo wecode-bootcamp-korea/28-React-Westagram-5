@@ -11,8 +11,8 @@ import LoginSunjoo from './pages/sunjoo/Login/Login';
 import MainSunjoo from './pages/sunjoo/Main/Main';
 
 // 채현's 컴포넌트
-import LoginCheayeon from './pages/chaehyun/Login/Login';
-import MainCheayeon from './pages/chaehyun/Main/Main';
+import Login from './pages/chaehyun/Login/Login';
+import Main from './pages/chaehyun/Main/Main';
 
 // 석호's 컴포넌트
 import LoginSeokho from './pages/seokho/Login/Login';
@@ -31,8 +31,8 @@ const Router = () => {
         <Route path="/main-ansin" element={<MainAnsin />} />
         <Route path="/login-sunjoo" element={<LoginSunjoo />} />
         <Route path="/main-sunjoo" element={<MainSunjoo />} />
-        <Route path="/login-cheayeon" element={<LoginCheayeon />} />
-        <Route path="/main-cheayeon" element={<MainCheayeon />} />
+        <Route path="/login-chaehyun" element={<Login />} />
+        <Route path="/main-chaehyun" element={<Main />} />
         <Route path="/login-seokho" element={<LoginSeokho />} />
         <Route path="/main-seokho" element={<MainSeokho />} />
         <Route path="/login-seongyong" element={<LoginSeongyong />} />
