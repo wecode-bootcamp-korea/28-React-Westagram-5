@@ -1,0 +1,472 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: #eeeeee;
+
+  .nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      font-size: 35px;
+      padding-right: 100px;
+      font-family: 'Lobster', cursive;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      span {
+        border-left: 2px solid black;
+        padding: 0 0 0 15px;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+        padding: 10px;
+
+        img {
+          margin: 15px;
+        }
+      }
+    }
+
+    .topLeft {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 150px;
+
+      #insta {
+        margin-right: 20px;
+      }
+    }
+  }
+  .mainimg {
+    width: 550px;
+    height: 500px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      width: 200px;
+      height: 25px;
+      text-align: center;
+      font-family: sans-serif;
+      color: #b9baba;
+    }
+
+    .glass {
+      font-size: 15px;
+      position: absolute;
+      color: #b9baba;
+      margin-right: 50px;
+    }
+  }
+
+  input {
+    font-size: 15px;
+  }
+
+  .feed {
+    height: 100%;
+    display: flex;
+    padding-top: 20%;
+
+    .mainBox {
+      width: 550px;
+      margin-bottom: 100px;
+
+      .mainTop {
+        margin-top: 150px;
+        border: 1px solid #b9baba;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .main-top-left-wrapper #sea {
+        width: 50px;
+        height: 50px;
+        margin: 10px 0 10px 20px;
+        border-radius: 50%;
+      }
+
+      .fa-ellipsis-h {
+        font-size: 30px;
+        margin: 20px 20px 0 0;
+        color: #b9baba;
+      }
+
+      .fa-heart {
+        width: 100px;
+      }
+
+      .mainTop h5 {
+        width: 150px;
+        margin: 20px 0 0 0;
+      }
+
+      .account {
+        padding-left: 10px;
+        text-align: left;
+
+        h6 {
+          margin: 0 auto;
+        }
+      }
+
+      .main-top-left-wrapper {
+        width: 135px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .characters {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        background-color: white;
+        border-left: 1px solid #b9baba;
+        border-right: 1px solid #b9baba;
+
+        .farContainer {
+          height: 40px;
+          width: 100px;
+          font-size: 20px;
+          padding-left: 15px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .fa-heart {
+          width: 20px;
+        }
+
+        .smallContainer {
+          font-size: 20px;
+          width: 15px;
+          padding-right: 35px;
+        }
+      }
+
+      .people {
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+          width: 50px;
+          height: 50px;
+          margin: 10px 0 10px 20px;
+          border-radius: 50%;
+        }
+      }
+      .bottomMain {
+        height: 20%;
+
+        .comment {
+          height: 100%;
+          background-color: white;
+          border: 1px solid #b9baba;
+
+          .friend {
+            width: 220px;
+            height: 40px;
+            padding-left: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+              width: 20px;
+              height: 20px;
+              border-radius: 50px;
+              margin-right: 5px;
+            }
+
+            h6 {
+              margin: 0;
+            }
+          }
+
+          #wecode {
+            display: flex;
+            font-size: 11px;
+            font-weight: bolder;
+            width: 100%;
+          }
+
+          form {
+            height: 100%;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: center;
+            padding: 0 0 40px 5px;
+            font-size: 8px;
+          }
+
+          li {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            width: 100%;
+            padding-left: 5px;
+            font-size: 8px;
+            list-style: none;
+
+            span {
+              width: 100%;
+            }
+
+            .myName {
+              width: 140px;
+              padding: 5px;
+            }
+          }
+
+          .bottomComment {
+            width: 550px;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+              width: 420px;
+              padding-left: 5px;
+              border: none;
+            }
+
+            button {
+              height: 30px;
+              width: 80px;
+              border: none;
+              background-color: white;
+              color: gray;
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    aside {
+      width: 300px;
+      height: 700px;
+      margin-left: 100px;
+      margin-top: 100px;
+    }
+
+    .sideContainer {
+      margin-top: 100px;
+    }
+
+    .sideTop {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      span {
+        font-size: 14px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      h6 {
+        height: 15px;
+        margin: 0 auto;
+        color: gray;
+      }
+    }
+
+    .sideTopInside {
+      padding-top: 10px;
+      padding-left: 10px;
+      text-align: left;
+    }
+
+    .sideMiddle {
+      .story {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #b9baba;
+        border-left: 1px solid #b9baba;
+        border-right: 1px solid #b9baba;
+        margin-top: 30px;
+        background-color: white;
+
+        h4 {
+          padding-left: 10px;
+          color: gray;
+        }
+
+        h5 {
+          padding-right: 10px;
+        }
+      }
+    }
+
+    .friendStory {
+      border: 1px solid #b9baba;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 10px;
+      }
+    }
+
+    .storyBottom {
+      background-color: white;
+      border-bottom: 1px solid #b9baba;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h4 {
+        padding-left: 10px;
+        color: gray;
+      }
+
+      h5 {
+        padding-right: 10px;
+      }
+    }
+
+    .sideBottom img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      padding: 10px;
+    }
+
+    .bottomStory {
+      background-color: white;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 10px;
+      }
+    }
+
+    .sideStory {
+      display: flex;
+      align-items: center;
+    }
+
+    .SmallAccount {
+      h5 {
+        margin: 0;
+        text-align: left;
+      }
+
+      h6 {
+        margin: 0;
+        text-align: left;
+      }
+    }
+
+    .bottomFriendWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bottomStory {
+      display: flex;
+      align-items: center;
+    }
+
+    .BottomAccount {
+      h5 {
+        margin: 0;
+        text-align: left;
+      }
+
+      h6 {
+        margin: 0;
+        text-align: left;
+      }
+    }
+
+    .sideBottom {
+      margin-top: 30px;
+      background-color: white;
+      border: 1px solid #b9baba;
+
+      button {
+        font-size: 13px;
+        color: #4d76ee;
+        margin-right: 20px;
+        text-align: right;
+        background-color: white;
+        border: none;
+        opacity: 0.8;
+      }
+
+      button:hover {
+        pointer-events: visibleStroke;
+        opacity: 1;
+      }
+    }
+  }
+}
