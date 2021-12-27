@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
+import '../../../styles/common.scss';
 
 const Main = () => {
+  const [commentLists, setCommentLists] = useState([
+    { userId: 'ok_chaehyun', value: '우와 너무 멋져요', time: '5분전' },
+    { userId: 'chansik', value: '곧 연락할께', time: '1분전' },
+  ]);
+
+  const [newComment, setNewComment] = useState('');
+
+  const uploadComment = e => {
+    e.preventDefault();
+    if (!newComment) return;
+
+    let copyComment = [...commentLists];
+
+    copyComment.push({
+      id: copyComment.length + 1,
+      userId: 'ok_chaehyun',
+      value: newComment,
+      time: '방금전',
+    });
+    setCommentLists(copyComment);
+
+    setNewComment('');
+    //setClassOfBtn('');
+  };
+
+  const handleCommentInput = e => {
+    setNewComment(e.target.value);
+  };
+  //console.log(commentLists);
+
   return (
     <body>
       <nav>
@@ -77,17 +108,20 @@ const Main = () => {
                 <i className="fa fa-bookmark-o" aria-hidden="true" />
               </div>
             </div>
-
             <div className="like_status">
               <span>좋아요 999개</span>
             </div>
-            <ul className="comment_list">
-              <li>
-                {' '}
-                <span className="insta_id">ok_chaehyun</span>
-                <span>우와 너무 멋져요😍</span>
-              </li>
+            <ul>
+              {commentLists.map((comment, idx) => {
+                return (
+                  <li key={idx}>
+                    {comment.userId} {'  '}
+                    {comment.value}
+                  </li>
+                );
+              })}
             </ul>
+
             <div className="count_comment">
               <span>댓글 92개 모두 보기</span>
             </div>
@@ -96,8 +130,16 @@ const Main = () => {
             </div>
           </article>
           <div class="comment_wrap">
-            <input class="comment_box" type="text" placeholder="댓글입력..." />
-            <button class="comment_btn">게시</button>
+            <input
+              class="comment_box"
+              type="text"
+              value={newComment}
+              onChange={handleCommentInput}
+              placeholder="댓글입력..."
+            />
+            <button class="comment_btn" onClick={uploadComment}>
+              게시
+            </button>
           </div>
         </div>
         <aside>

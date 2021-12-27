@@ -215,6 +215,15 @@ ul {
   list-style: none;
 }
 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
 .instagram_icon {
   width: 30px;
   height: 30px;
@@ -226,7 +235,7 @@ nav {
 }
 
 aside {
-  width: 300px;
+  width: 350px;
   margin: 15px;
   padding: 15px;
 }
