@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-body {
+section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,57 +10,48 @@ body {
   width: 100vw;
   height: 100vh;
 
-  .bigContainer {
-    position: relative;
-    width: 800px;
-    height: 600px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-  }
-  .container {
-    width: 500px;
-    height: 550px;
+  .Logininner {
+    padding: 50px;
     border: 1px solid #d0d6d6;
     display: flex;
     flex-direction: column;
 
     .logo {
       width: 410px;
-      padding-left: 109px;
+      padding-bottom: 70px;
+      padding-top: 30px;
       font-size: 60px;
       font-family: 'Lobster', cursive;
       text-align: center;
     }
-  }
 
-  input {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #d0d6d6;
-    opacity: 0.8;
-  }
+    input {
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #d0d6d6;
+      opacity: 0.8;
+    }
 
-  input:hover {
-    opacity: 1;
-  }
+    input:hover {
+      opacity: 1;
+    }
 
-  .loginPw {
-    padding: 10px;
-  }
+    .loginPw {
+      padding: 10px;
+    }
 
-  button {
-    width: 300px;
-    height: 40px;
-    color: white;
-    font-size: 15px;
-    border: 1px solid #a3caff;
-    background-color: #072144;
-    opacity: 0.4;
-    border-radius: 15px;
-    padding-left: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
+    button {
+      width: 300px;
+      height: 40px;
+      color: white;
+      font-size: 15px;
+      border: 1px solid #a3caff;
+      opacity: 0.4;
+      border-radius: 15px;
+      padding-left: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
   }
 
   footer {

@@ -1,34 +1,31 @@
 import React, { useState } from 'react';
+import CommentList from './CommentList';
 import './Main.scss';
 
 const Main = () => {
   const [comment, setComment] = useState('');
-  // const [lists, setLists] = useState([]);
-  // const [nextId, setNextId] = useState(0);
+  const [commentArray, SetCommentArray] = useState([
+    `사모예드견(Samoyed dog)은 썰매용·가정견·애완용으로 많이
+  기른다. 북부 시베리아의 유목민 사모예드족이 옛날부터 기르던
+  썰매용 개로서, 부족의 이름을 따서 명명되었다.`,
+  ]);
 
-  const handleTextInput = event => {
-    setComment(event.target.value);
-    console.log(handleTextInput);
+  // setCommentArray[comment, ...commentArray ]
+
+  console.log(commentArray);
+
+  const onSubmit = event => {
+    event.preventDefault();
+    if (comment === '') {
+      return;
+    }
+    SetCommentArray([...commentArray, comment]);
+    setComment('');
   };
 
-  // const submit = e => {
-  //   e.preventDefault()
-
-  // const about_lists = lists.concat({
-  //    //원래 있는 리스트에 붙여주기
-  //   id: nextId,
-  //   text: input,
-  //  });
-
-  // setNextId(nextId + 1);
-  // setLists(about_lists);
-  // setInput('');
-
-  // const input_list = lists.map(list => (
-  //   <li>
-  //     <b>wecode_28기 엄성용</b> : {list.text}
-  //   </li>
-  // ));
+  const handleCommentInput = event => {
+    setComment(event.target.value);
+  };
 
   return (
     <>
@@ -68,8 +65,8 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <div className="bigMiddleContainer">
-        <section className="mainBox">
+      <div className="feed">
+        <div className="mainBox">
           <div className="feeds">
             <div className="mainTop">
               <div className="main-top-left-wrapper">
@@ -94,52 +91,56 @@ const Main = () => {
               />
               <div className="textBox" />
             </div>
-          </div>
-          <div className="mainRight" />
-          <div className="bottomMain">
-            <div className="characters">
-              <div className="farContainer">
-                <i className="far fa-heart" />
-                <i className="far fa-comment" />
-                <i className="fas fa-upload" />
-              </div>
-              <div className="smallContainer">
-                <i className="far fa-bookmark" />
-              </div>
-            </div>
-            <div className="comment">
-              <div className="topComment">
-                <div className="friend">
-                  <img
-                    src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAzMzBfNTkg%2FMDAxNTIyMzcxMjQ2OTg3.jqfbA4OqZ3BrhgRChb2VWqGDTZNfzVzeWOCrmcqi-y8g.9gj_Vp7sWCDBltpSs_x1-TaAwxFVfxUt-n9jkds9_I0g.JPEG.dvc3810%2Fwolf-3241382_640.jpg&type=sc960_832"
-                    alt="wecode"
-                    title="wecode"
-                  />
-                  <h6>Wecode_28기 외 4명이 좋아합니다</h6>
+
+            <div className="mainRight" />
+            <div className="bottomMain">
+              <div className="characters">
+                <div className="farContainer">
+                  <i className="far fa-heart" />
+                  <i className="far fa-comment" />
+                  <i className="fas fa-upload" />
+                </div>
+                <div className="smallContainer">
+                  <i className="far fa-bookmark" />
                 </div>
               </div>
-              <form>
+              <div className="comment">
+                <div className="topComment">
+                  <div className="friend">
+                    <img
+                      src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAzMzBfNTkg%2FMDAxNTIyMzcxMjQ2OTg3.jqfbA4OqZ3BrhgRChb2VWqGDTZNfzVzeWOCrmcqi-y8g.9gj_Vp7sWCDBltpSs_x1-TaAwxFVfxUt-n9jkds9_I0g.JPEG.dvc3810%2Fwolf-3241382_640.jpg&type=sc960_832"
+                      alt="wecode"
+                      title="wecode"
+                    />
+                    <h6>Wecode_28기 외 4명이 좋아합니다</h6>
+                  </div>
+                </div>
                 <ul>
-                  <li id="wecode">Wecode_28기 엄성용</li>
-                  <li>
-                    사모예드견(Samoyed dog)은 썰매용·가정견·애완용으로 많이
-                    기른다. 북부 시베리아의 유목민 사모예드족이 옛날부터 기르던
-                    썰매용 개로서, 부족의 이름을 따서 명명되었다.
-                  </li>
+                  {commentArray.map((comment, index) => (
+                    <CommentList key={index} comment={comment} />
+                  ))}
                 </ul>
-                {/* <ul>{input_list}</ul> */}
-                <div className="bottomComment">
-                  <input
-                    onChange={handleTextInput}
-                    type="text"
-                    placeholder="댓글달기"
-                  />
-                  <button type="button">게시</button>
+                <div className="commentContainer">
+                  <form className="bottomComment">
+                    <input
+                      type="text"
+                      placeholder="댓글달기"
+                      onChange={handleCommentInput}
+                      value={comment}
+                    />
+                    <button
+                      type="button"
+                      className="commetBtn"
+                      onClick={onSubmit}
+                    >
+                      게시
+                    </button>
+                  </form>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
         <aside>
           <div class="sideContainer">
             <div className="sideTop">
@@ -160,46 +161,46 @@ const Main = () => {
                 <h5>모두 보기</h5>
               </div>
               <div className="friendStory">
-                <div className="sideFirstStory">
+                <div className="sideStory">
                   <img
                     src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140304_97%2Fekaros3558_13939196318173OGiB_JPEG%2F1686367-1920x1280-Orion-Constellation.jpg&type=sc960_832"
                     alt="friend1"
                     title="friend1"
                   />
-                  <div className="firstSmallAccount">
+                  <div className="SmallAccount">
                     <h5>Instar</h5>
                     <h6>Friday_night</h6>
                   </div>
                 </div>
-                <div className="sideSecondStory">
+                <div className="sideStory">
                   <img
                     src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA0MDNfNDUg%2FMDAxNjE3NDU2ODk3NDQz.kcdnHRmvukQA6IXqzDoUT-qGctgMOr7BaWHIW6McQhgg.JAblgQsP-mNKjs6JO7EPLTrArU0UlDsEYgMUM1hVCtUg.JPEG.dan9199%2FIMG_6431.JPG&type=sc960_832"
                     alt="friend2"
                     title="friend2"
                   />
-                  <div className="secondSmallAccount">
+                  <div className="SmallAccount">
                     <h5>Latte is horse</h5>
                     <h6>Big_Brother</h6>
                   </div>
                 </div>
-                <div className="sideThirdStory">
+                <div className="sideStory">
                   <img
                     src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMjVfMTM1%2FMDAxNjM3ODQ2Njk3MTYy.T4b-bduSbpqKgDqsEFoaxVF27nXJSTOqtJklaNnBP0Mg.WrhQ38PYLVVGq2N0shOsy09lOCFetRqpDZSWbwfppf4g.JPEG.gkdmsdms2974%2Foutput_3801115789.jpg&type=sc960_832"
                     alt="friend3"
                     tilte="friend3"
                   />
-                  <div className="thirdSmallAccount">
+                  <div className="SmallAccount">
                     <h5>airport_thief</h5>
                     <h6>Incheon_Airport</h6>
                   </div>
                 </div>
-                <div className="sideFourthStory">
+                <div className="sideStory">
                   <img
                     src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjJfNjgg%2FMDAxNjI0MzYwMjkxMjg1.KTruw39HP3PWfV4csyoSr81PfKp2hgRevGDmqjsTdPAg.NsQICe5NCDYD5hzwU_6pfzMVKo2YBkK0_x6kzTDvOhAg.JPEG.filmbybible%2Fimage.jpeg&type=sc960_832"
                     alt="friend4"
                     title="friend4"
                   />
-                  <div className="fourthSmallAccount">
+                  <div className="SmallAccount">
                     <h5>Loppi</h5>
                     <h6>Small_Brother</h6>
                   </div>
@@ -213,67 +214,67 @@ const Main = () => {
                   <h4>회원님을 위한 추천</h4>
                   <h5>모두 보기</h5>
                 </div>
-                <div className="bottomfirstWrapper">
-                  <div className="bottomFirstStory">
+                <div className="bottomFriendWrapper">
+                  <div className="bottomStory">
                     <img
                       src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140304_97%2Fekaros3558_13939196318173OGiB_JPEG%2F1686367-1920x1280-Orion-Constellation.jpg&type=sc960_832"
                       alt="friend1"
                       title="friend1"
                     />
-                    <div className="firstBottomAccount">
+                    <div className="BottomAccount">
                       <h5>Instar</h5>
                       <h6>Friday_night</h6>
                     </div>
                   </div>
-                  <button className="firstButton" type="button">
+                  <button className="Button" type="button">
                     팔로우
                   </button>
                 </div>
-                <div className="bottomSecondWrapper">
-                  <div className="bottomSecondStory">
+                <div className="bottomFriendWrapper">
+                  <div className="bottomStory">
                     <img
                       src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA0MDNfNDUg%2FMDAxNjE3NDU2ODk3NDQz.kcdnHRmvukQA6IXqzDoUT-qGctgMOr7BaWHIW6McQhgg.JAblgQsP-mNKjs6JO7EPLTrArU0UlDsEYgMUM1hVCtUg.JPEG.dan9199%2FIMG_6431.JPG&type=sc960_832"
                       alt="friend2"
                       title="friend2"
                     />
-                    <div className="secondBottomAccount">
+                    <div className="BottomAccount">
                       <h5>Latte is horse</h5>
                       <h6>Big_Brother</h6>
                     </div>
                   </div>
-                  <button className="secondButton" type="button">
+                  <button className="Button" type="button">
                     팔로우
                   </button>
                 </div>
-                <div className="bottomThirdWrapper">
-                  <div className="bottomThirdStory">
+                <div className="bottomFriendWrapper">
+                  <div className="bottomStory">
                     <img
                       src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMjVfMTM1%2FMDAxNjM3ODQ2Njk3MTYy.T4b-bduSbpqKgDqsEFoaxVF27nXJSTOqtJklaNnBP0Mg.WrhQ38PYLVVGq2N0shOsy09lOCFetRqpDZSWbwfppf4g.JPEG.gkdmsdms2974%2Foutput_3801115789.jpg&type=sc960_832"
                       alt="friend3"
                       title="friend3"
                     />
-                    <div className="thirdBottomAccount">
+                    <div className="BottomAccount">
                       <h5>airport_thief</h5>
                       <h6>Incheon_Airport</h6>
                     </div>
                   </div>
-                  <button className="thirdButton" type="button">
+                  <button className="Button" type="button">
                     팔로우
                   </button>
                 </div>
-                <div className="bottomFourthWrapper">
-                  <div className="bottomFourthStory">
+                <div className="bottomFriendWrapper">
+                  <div className="bottomStory">
                     <img
                       src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MjJfNjgg%2FMDAxNjI0MzYwMjkxMjg1.KTruw39HP3PWfV4csyoSr81PfKp2hgRevGDmqjsTdPAg.NsQICe5NCDYD5hzwU_6pfzMVKo2YBkK0_x6kzTDvOhAg.JPEG.filmbybible%2Fimage.jpeg&type=sc960_832"
                       alt="friend4"
                       title="friend"
                     />
-                    <div className="fourthBottomAccount">
+                    <div className="BottomAccount">
                       <h5>Loppi</h5>
                       <h6>Small_Brother</h6>
                     </div>
                   </div>
-                  <button className="fouthButton" type="button">
+                  <button className="Button" type="button">
                     팔로우
                   </button>
                 </div>
